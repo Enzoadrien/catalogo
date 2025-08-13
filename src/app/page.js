@@ -41,24 +41,29 @@ export default function Catalogo() {
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {productos.map((p, i) => (
-            <div
-              key={i}
-              className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center border border-red-100 hover:shadow-lg transition"
-            >
-              <div className="text-5xl mb-4"><i className={p.icono}></i></div>
-              <h2 className="text-lg font-bold">{p.titulo}</h2>
-              <p className="text-sm text-gray-500">{p.descripcion}</p>
-              <a
-                href={p.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
+          {productos.map((p, i) => {
+            const viewerUrl = `https://docs.google.com/viewer?url=https://catalogonextjs.netlify.app${encodeURIComponent(p.pdf)}&embedded=true`;
+
+            return (
+              <div
+                key={i}
+                className="bg-white shadow-md rounded-xl p-6 flex flex-col items-center text-center border border-red-100 hover:shadow-lg transition"
               >
-                Abrir PDF
-              </a>
-            </div>
-          ))}
+                <div className="text-5xl mb-4"><i className={p.icono}></i></div>
+                <h2 className="text-lg font-bold">{p.titulo}</h2>
+                <p className="text-sm text-gray-500">{p.descripcion}</p>
+                <a
+                  href={viewerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition flex items-center gap-2"
+                >
+                  <i className={p.icono}></i>
+                  Ver PDF
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
