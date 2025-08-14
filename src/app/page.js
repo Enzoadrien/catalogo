@@ -37,7 +37,7 @@ export default function Catalogo() {
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center">Catálogo de productos</h1>
         <p className="text-center text-gray-600 mt-2">
-          Ve nuestros catálogos en PDF para conocer toda nuestra gama de productos
+          Ve nuestros catálogos en PDF para conocer toda nuestra gama de productos.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
